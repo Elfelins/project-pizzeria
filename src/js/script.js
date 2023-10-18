@@ -133,6 +133,5 @@ const select = {
       thisApp.initMenu();
     },
   };
-
   app.init();
-}
+} 

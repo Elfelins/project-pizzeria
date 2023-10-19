@@ -165,6 +165,8 @@ const select = {
 
           // check if there is param with a name of paramId in formData and if it includes optionId
           if(optionSelected) {
+          // check if there is param with a name of paramId in formData and if it includes optionId
+          if(formData[paramId] && formData[paramId].includes(optionId)) {
             // check if the option is not default
             if(!option.default) {
                //add option price to price variable
@@ -183,6 +185,12 @@ const select = {
             }
             if(optionImage) {
               optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
+            } else {
+              // check if the option is default
+              if(option.default) {
+              // reduce price variable
+              price = price - option.price;
             }
           }         
         }
